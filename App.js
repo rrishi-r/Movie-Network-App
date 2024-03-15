@@ -19,29 +19,29 @@ function App() {
   return (
   <BrowserRouter>
     <div>
-		<Route exact path="/">
-			<li>
-			<Link to="/LoginForm">Login</Link>
-			</li>
-		</Route>
-        <Route exact path="/">
-			<li>
-			<Link to="/RegistrationForm">Register</Link>
-			</li>
-		</Route>
+	<Route exact path="/">
+		<li>
+		<Link to="/LoginForm">Login</Link>
+		</li>
+	</Route>
+	<Route exact path="/">
+		<li>
+		<Link to="/RegistrationForm">Register</Link>
+		</li>
+	</Route>
     </div>
     <Switch>
-		<Route path="/LoginForm" exact component={LoginForm} />
-		<Route path="/RegistrationForm" component={RegistrationForm} />
-		<Route path="/UpdateUser" exact component={UpdateUser} />
-		<Route path="/Selections" component={Selections} />
-        <Route path="/Results" component={Results} />
-		<Route path="/RegistrationStatus" component={RegistrationStatus} />
-		<Route 
-			path="/UserAccount" 
-			component={UserAccount} 
-			/>
-		<Route path="/UpdateUser/:username" component={UpdateUser} />
+	<Route path="/LoginForm" exact component={LoginForm} />
+	<Route path="/RegistrationForm" component={RegistrationForm} />
+	<Route path="/UpdateUser" exact component={UpdateUser} />
+	<Route path="/Selections" component={Selections} />
+	<Route path="/Results" component={Results} />
+	<Route path="/RegistrationStatus" component={RegistrationStatus} />
+	<Route 
+		path="/UserAccount" 
+		component={UserAccount} 
+		/>
+	<Route path="/UpdateUser/:username" component={UpdateUser} />
     </Switch>
   </BrowserRouter>
   );
