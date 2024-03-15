@@ -21,12 +21,12 @@ function App() {
     <div>
 		<Route exact path="/">
 			<li>
-				<Link to="/LoginForm">Login</Link>
+			<Link to="/LoginForm">Login</Link>
 			</li>
 		</Route>
         <Route exact path="/">
 			<li>
-				<Link to="/RegistrationForm">Register</Link>
+			<Link to="/RegistrationForm">Register</Link>
 			</li>
 		</Route>
     </div>
@@ -40,7 +40,6 @@ function App() {
 		<Route 
 			path="/UserAccount" 
 			component={UserAccount} 
-			
 			/>
 		<Route path="/UpdateUser/:username" component={UpdateUser} />
     </Switch>
