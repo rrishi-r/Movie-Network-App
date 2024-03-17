@@ -8,7 +8,7 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import Results from './Results.js';
 import { useParams } from 'react-router-dom';
-import OMDP_API_KEY from '.omdp_api';
+import OMDP_API_KEY from './omdp_api';
 
 const surveyJson = {
   elements: [{
