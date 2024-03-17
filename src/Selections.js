@@ -36,16 +36,16 @@ function Selections() {
 	var movieURL = 'http://www.omdbapi.com/?';
 		console.log("KEYWORD", keyWord);
 		console.log("KEYWORD LENGTH", keyWord.length);
-		if(keyWord != undefined){
+		if(keyWord !== undefined){
 			movieURL = movieURL.concat('s=');
 			movieURL = movieURL.concat(keyWord);
 			console.log("updated movie URL", movieURL);
 		} 
-		if(movieType != undefined){
+		if(movieType !== undefined){
 			movieURL = movieURL.concat('&type=');
 			movieURL = movieURL.concat(movieType);
 		}
-		if(yearRelease != undefined){
+		if(yearRelease !== undefined){
 			movieURL = movieURL.concat('&y=');
 			movieURL = movieURL.concat(yearRelease);
 		}
