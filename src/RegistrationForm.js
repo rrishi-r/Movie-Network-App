@@ -21,7 +21,7 @@ const RegistrationForm = () => {
 	console.log("handling submit");
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/register', formData);
+      const response = await axios.post('https://movie-networking-app-backend.onrender.com/register', formData);
 	  console.log("registration response");
 	  console.log(response);
 	  console.log("argument");

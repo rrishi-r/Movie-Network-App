@@ -1,7 +1,15 @@
-import { useLocation } from 'react-router-dom';
-import React from 'react';
+import { useLocation, useHistory} from 'react-router-dom';
+import React, {useEffect} from 'react';
 
 function RegistrationStatus(){
+	const history = useHistory();
+	useEffect(() => {
+		const redirectTimeout = setTimeout(() => {
+		  history.push('./');
+		}, 1000); 
+
+		return () => clearTimeout(redirectTimeout);
+	}, [history]); 
 	console.log("registration status function");
 	const location = useLocation();
 	const params = new URLSearchParams(location.search);
@@ -20,6 +28,7 @@ function RegistrationStatus(){
 			</div>
 		);
 	}
+	
 };
 export default RegistrationStatus;
 	

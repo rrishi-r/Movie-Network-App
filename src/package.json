@@ -1,5 +1,5 @@
 {
-  "name": "movie-app",
+  "name": "movie-app-backend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -45,5 +45,3 @@
     ]
   }
 }
-
-

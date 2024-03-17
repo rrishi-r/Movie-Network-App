@@ -21,7 +21,7 @@ const LoginForm = () => {
   const HandleSubmit = async (e) => {
     e.preventDefault();
     
-    const response = await axios.post('http://localhost:3001/login', formData, {mode: 'no-cors',});
+    const response = await axios.post('https://movie-networking-app-backend.onrender.com/login', formData, {mode: 'no-cors',});
     console.log(response);
 	if(response.data.status_value === true){
 		var argument = '/UserAccount?username=';
