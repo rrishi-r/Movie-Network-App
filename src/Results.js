@@ -17,7 +17,7 @@ function Results(){
 		};
 		fetchData();
 		
-	}, []);
+	}, [movieResults, url]);
 	return (
 		<table style={{borderSpacing:'8px'}}>
 		  <thead>

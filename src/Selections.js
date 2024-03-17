@@ -54,7 +54,7 @@ function Selections() {
 	var argument = '/Results?urlValue=';
 	argument = argument.concat(encodeURIComponent(movieURL));
 	historyCommand.push(argument);
-  }, []);
+  }, [historyCommand]);
 
   survey.onComplete.add(alertResults);
 
