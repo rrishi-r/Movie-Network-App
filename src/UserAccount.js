@@ -1,28 +1,17 @@
-import { useParams } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
-import Selections from './Selections';
-import UpdateUser from "./UpdateUser";
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 import OpenAI from 'openai';
-import Configuration from 'openai';
 import OPENAI_API_KEY from './openai';
 import '../src/styles/UserAccount.css'
 
 
 function UserAccount(){
-	const openai = new OpenAI({
-		apiKey: OPENAI_API_KEY,
-		dangerouslyAllowBrowser: true
-	});
 	const [movieRecommendations, setmovieRecommendations] = useState('');
 	const [moviePersonality, setmoviePersonality] = useState('');
-	const [prompt, setPrompt] = useState("");
-	const [apiResponse, setApiResponse] = useState("");
 	const location = useLocation();
 	const params = new URLSearchParams(location.search);
-	var status_value = params.get('status_value');
 	var username = params.get('username');
 	var favoriteMovie = params.get('favoriteMovie');
 	var favoriteGenre = params.get('favoriteGenre');
@@ -48,7 +37,6 @@ function UserAccount(){
 			console.log(response.data.choices[0].text);
 			setmovieRecommendations(response.data.choices[0].text)
 		} catch (e) {
-			setApiResponse("Something is going wrong, Please try again.");
 			console.log(e);
 		  }
     

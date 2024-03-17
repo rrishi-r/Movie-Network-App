@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import RegistrationStatus from './RegistrationStatus.js';
 import { useHistory } from 'react-router-dom';
 
 const RegistrationForm = () => {

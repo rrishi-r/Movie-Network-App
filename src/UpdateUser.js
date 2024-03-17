@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import UserAccount from './UserAccount.js';
 import { useParams } from 'react-router-dom';
 
 const UpdateUser = () => {
@@ -39,7 +38,7 @@ const UpdateUser = () => {
 		historyCommand.push(argument);
 	}
 	else{
-		var argument = '/UserAccount?status_value=';
+		argument = '/UserAccount?status_value=';
 		argument = argument.concat(response.data.status_value);
 		historyCommand.push(argument);
 	}

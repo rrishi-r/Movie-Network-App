@@ -1,9 +1,5 @@
-import { useParams } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import axios from 'axios';
-import React, { useState, useEffect } from 'react';
-import RegistrationForm from "./RegistrationForm";
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+import React from 'react';
 
 function RegistrationStatus(){
 	console.log("registration status function");
