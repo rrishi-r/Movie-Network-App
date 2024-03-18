@@ -21,7 +21,7 @@ function UserAccount(){
 	const fetchData = async () => {
 	  try {
 		const response = await axios.get('/envVariables');
-		setOpenaiValueValue(response.data.OPENAI_API_KEY);
+		setOpenaiValue(response.data.OPENAI_API_KEY);
 	  } catch (error) {
 		console.error('Error fetching variable:', error);
 	  }
