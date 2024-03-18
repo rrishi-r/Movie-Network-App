@@ -2,8 +2,6 @@ import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
-import OpenAI from 'openai';
-import OPENAI_API_KEY from './openai';
 import '../src/styles/UserAccount.css'
 
 

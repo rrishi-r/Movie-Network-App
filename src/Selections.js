@@ -62,7 +62,7 @@ function Selections() {
 			movieURL = movieURL.concat('&y=');
 			movieURL = movieURL.concat(yearRelease);
 		}
-		movieURL = movieURL.concat('&apikey=' + process.env.omdpValue);
+		movieURL = movieURL.concat('&apikey=' + omdpValue);
 	alert(results);
 	var argument = '/Results?urlValue=';
 	argument = argument.concat(encodeURIComponent(movieURL));
