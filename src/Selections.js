@@ -29,7 +29,7 @@ function Selections() {
   useEffect(() => {
 	const fetchData = async () => {
 	  try {
-		const response = await axios.get('/envVariables');
+		const response = await axios.get('/.netlify/functions/envVariables');
 		setOmdpValue(response.data.OMDP_API_KEY);
 	  } catch (error) {
 		console.error('Error fetching variable:', error);
