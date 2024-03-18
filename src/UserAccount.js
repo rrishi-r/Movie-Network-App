@@ -20,6 +20,7 @@ function UserAccount(){
 	  try {
 		const response = await axios.get('/.netlify/functions/envVariables');
 		console.log(response);
+		setOpenaiValue(response.data.OPENAI_API_KEY);
 	  } catch (error) {
 		console.error('Error fetching variable:', error);
 	  }
