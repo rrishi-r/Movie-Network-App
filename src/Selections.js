@@ -6,6 +6,8 @@ import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
 import { useHistory } from 'react-router-dom';
 
+const [omdpValue, setOmdpValue] = useState('');
+
 const surveyJson = {
   elements: [{
     name: "MovieType",
@@ -23,6 +25,17 @@ const surveyJson = {
 };
 
 function Selections() {
+  useEffect(() => {
+	const fetchData = async () => {
+	  try {
+		const response = await axios.get('/envVariables');
+		setOmdpValue(response.data.OMDP_API_KEY);
+	  } catch (error) {
+		console.error('Error fetching variable:', error);
+	  }
+	};
+	fetchData();
+  }, []);
   const historyCommand = useHistory();
   const survey = new Model(surveyJson);
   console.log('starting app!!');
@@ -48,7 +61,7 @@ function Selections() {
 			movieURL = movieURL.concat('&y=');
 			movieURL = movieURL.concat(yearRelease);
 		}
-		movieURL = movieURL.concat('&apikey=' + process.env.OMDP_API_KEY);
+		movieURL = movieURL.concat('&apikey=' + process.env.omdpValue);
 	alert(results);
 	var argument = '/Results?urlValue=';
 	argument = argument.concat(encodeURIComponent(movieURL));
