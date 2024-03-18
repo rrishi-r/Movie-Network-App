@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import OpenAI from 'openai';
 import OPENAI_API_KEY from './openai';
@@ -21,7 +21,7 @@ function UserAccount(){
 	const fetchData = async () => {
 	  try {
 		const response = await axios.get('/envVariables');
-		setOmdpValue(response.data.OPENAI_API_KEY);
+		setOpenaiValueValue(response.data.OPENAI_API_KEY);
 	  } catch (error) {
 		console.error('Error fetching variable:', error);
 	  }

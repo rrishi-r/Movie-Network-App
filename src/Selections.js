@@ -1,12 +1,12 @@
 import { useCallback } from 'react';
 
 import 'survey-core/defaultV2.min.css';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
-const [omdpValue, setOmdpValue] = useState('');
 
 const surveyJson = {
   elements: [{
@@ -25,6 +25,7 @@ const surveyJson = {
 };
 
 function Selections() {
+  const [omdpValue, setOmdpValue] = useState('');
   useEffect(() => {
 	const fetchData = async () => {
 	  try {
