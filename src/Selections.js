@@ -5,7 +5,6 @@ import React from 'react';
 import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
 import { useHistory } from 'react-router-dom';
-import OMDP_API_KEY from './omdp_api';
 
 const surveyJson = {
   elements: [{
@@ -49,7 +48,7 @@ function Selections() {
 			movieURL = movieURL.concat('&y=');
 			movieURL = movieURL.concat(yearRelease);
 		}
-		movieURL = movieURL.concat('&apikey=' + OMDP_API_KEY);
+		movieURL = movieURL.concat('&apikey=' + process.env.OMDP_API_KEY);
 	alert(results);
 	var argument = '/Results?urlValue=';
 	argument = argument.concat(encodeURIComponent(movieURL));

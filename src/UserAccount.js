@@ -2,7 +2,6 @@ import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
-import OPENAI_API_KEY from './openai';
 import '../src/styles/UserAccount.css'
 
 
@@ -29,7 +28,7 @@ function UserAccount(){
 			  {
 				headers: {
 				  "Content-Type": "application/json",
-				  Authorization: `Bearer ${OPENAI_API_KEY}`,
+				  Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
 				},
 			  },
 			);
