@@ -1,32 +1,32 @@
+import { useParams } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import {Link} from 'react-router-dom';
+import Selections from './Selections';
+import UpdateUser from "./UpdateUser";
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+import OpenAI from 'openai';
+import Configuration from 'openai';
+import OPENAI_API_KEY from './openai';
 import '../src/styles/UserAccount.css'
 
 
 function UserAccount(){
-	const [openaiValue, setOpenaiValue] = useState('');
+	const openai = new OpenAI({
+		apiKey: OPENAI_API_KEY,
+		dangerouslyAllowBrowser: true
+	});
 	const [movieRecommendations, setmovieRecommendations] = useState('');
 	const [moviePersonality, setmoviePersonality] = useState('');
+	const [prompt, setPrompt] = useState("");
+	const [apiResponse, setApiResponse] = useState("");
 	const location = useLocation();
 	const params = new URLSearchParams(location.search);
+	var status_value = params.get('status_value');
 	var username = params.get('username');
 	var favoriteMovie = params.get('favoriteMovie');
 	var favoriteGenre = params.get('favoriteGenre');
 	var favoriteActor = params.get('favoriteActor');
-	useEffect(() => {
-	const fetchData = async () => {
-	  try {
-		const response = await axios.get('/.netlify/functions/envVariables');
-		console.log(response);
-		setOpenaiValue(response.data.OPENAI_API_KEY);
-	  } catch (error) {
-		console.error('Error fetching variable:', error);
-	  }
-	};
-	fetchData();
-	}, []);
 	const handleClick1 = async (e) => {
 		e.preventDefault();
 		try {
@@ -41,13 +41,14 @@ function UserAccount(){
 			  {
 				headers: {
 				  "Content-Type": "application/json",
-				  Authorization: `Bearer ${openaiValue}`,
+				  Authorization: `Bearer ${OPENAI_API_KEY}`,
 				},
 			  },
 			);
 			console.log(response.data.choices[0].text);
 			setmovieRecommendations(response.data.choices[0].text)
 		} catch (e) {
+			setApiResponse("Something is going wrong, Please try again.");
 			console.log(e);
 		  }
     
@@ -67,7 +68,7 @@ function UserAccount(){
 			  {
 				headers: {
 				  "Content-Type": "application/json",
-				  Authorization: `Bearer ${openaiValue}`,
+				  Authorization: `Bearer ${OPENAI_API_KEY}`,
 				},
 			  },
 			);

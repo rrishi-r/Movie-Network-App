@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import UserAccount from './UserAccount.js';
+import Results from './Results.js';
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -21,7 +23,7 @@ const LoginForm = () => {
   const HandleSubmit = async (e) => {
     e.preventDefault();
     
-    const response = await axios.post('https://movie-networking-app-backend.onrender.com/login', formData, {mode: 'no-cors',});
+    const response = await axios.post('http://localhost:3001/login', formData, {mode: 'no-cors',});
     console.log(response);
 	if(response.data.status_value === true){
 		var argument = '/UserAccount?username=';
@@ -42,7 +44,7 @@ const LoginForm = () => {
 		console.log("after history command");
 	}
 	else{
-		argument = '/UserAccount?status_value=';
+		var argument = '/UserAccount?status_value=';
 		argument = argument.concat(response.data.status_value);
 		console.log("status value: ");
 		console.log(response.data.status_value);

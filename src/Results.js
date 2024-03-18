@@ -1,4 +1,6 @@
+import { useParams } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 
 function Results(){
@@ -17,7 +19,7 @@ function Results(){
 		};
 		fetchData();
 		
-	}, [movieResults, url]);
+	}, []);
 	return (
 		<table style={{borderSpacing:'8px'}}>
 		  <thead>

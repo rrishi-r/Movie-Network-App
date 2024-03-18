@@ -7,7 +7,7 @@ const app = express();
 const port = 3001;
 
 app.use(express.json());
-app.use(cors({ origin: 'https://main--cerulean-chimera-e4b05d.netlify.app/' }));
+app.use(cors({ origin: 'http://localhost:3000' }));
 
 mongoose.connect('mongodb://127.0.0.1:27017/myDatabase', {  
   useNewUrlParser: true,

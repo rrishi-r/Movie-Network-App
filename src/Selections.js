@@ -1,12 +1,14 @@
 import { useCallback } from 'react';
 
 import 'survey-core/defaultV2.min.css';
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
-import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-
+import { useHistory } from 'react-router-dom';
+import Results from './Results.js';
+import { useParams } from 'react-router-dom';
+import OMDP_API_KEY from './omdp_api';
 
 const surveyJson = {
   elements: [{
@@ -25,18 +27,6 @@ const surveyJson = {
 };
 
 function Selections() {
-  const [omdpValue, setOmdpValue] = useState('');
-  useEffect(() => {
-	const fetchData = async () => {
-	  try {
-		const response = await axios.get('/.netlify/functions/envVariables');
-		setOmdpValue(response.data.OMDP_API_KEY);
-	  } catch (error) {
-		console.error('Error fetching variable:', error);
-	  }
-	};
-	fetchData();
-  }, []);
   const historyCommand = useHistory();
   const survey = new Model(surveyJson);
   console.log('starting app!!');
@@ -46,28 +36,28 @@ function Selections() {
 	const movieType = userEntries.MovieType;
 	const yearRelease = userEntries.YearRelease;
 	const keyWord = String(userEntries.KeyWord);
-	var movieURL = 'https://www.omdbapi.com/?';
+	var movieURL = 'http://www.omdbapi.com/?';
 		console.log("KEYWORD", keyWord);
 		console.log("KEYWORD LENGTH", keyWord.length);
-		if(keyWord !== undefined){
+		if(keyWord != undefined){
 			movieURL = movieURL.concat('s=');
 			movieURL = movieURL.concat(keyWord);
 			console.log("updated movie URL", movieURL);
 		} 
-		if(movieType !== undefined){
+		if(movieType != undefined){
 			movieURL = movieURL.concat('&type=');
 			movieURL = movieURL.concat(movieType);
 		}
-		if(yearRelease !== undefined){
+		if(yearRelease != undefined){
 			movieURL = movieURL.concat('&y=');
 			movieURL = movieURL.concat(yearRelease);
 		}
-		movieURL = movieURL.concat('&apikey=' + omdpValue);
+		movieURL = movieURL.concat('&apikey=' + OMDP_API_KEY);
 	alert(results);
 	var argument = '/Results?urlValue=';
 	argument = argument.concat(encodeURIComponent(movieURL));
 	historyCommand.push(argument);
-  }, [historyCommand, omdpValue]);
+  }, []);
 
   survey.onComplete.add(alertResults);
 
