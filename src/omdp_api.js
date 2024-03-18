@@ -1,3 +1,3 @@
-const OMDP_API_KEY = "b77247a2";
+const OMDP_API_KEY = "";
 
 export default OMDP_API_KEY;

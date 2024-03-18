@@ -33,7 +33,7 @@ function Selections() {
 	const movieType = userEntries.MovieType;
 	const yearRelease = userEntries.YearRelease;
 	const keyWord = String(userEntries.KeyWord);
-	var movieURL = 'http://www.omdbapi.com/?';
+	var movieURL = 'https://www.omdbapi.com/?';
 		console.log("KEYWORD", keyWord);
 		console.log("KEYWORD LENGTH", keyWord.length);
 		if(keyWord !== undefined){
