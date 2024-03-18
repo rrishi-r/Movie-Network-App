@@ -7,19 +7,19 @@ The Movie Networking App includes the following functionality:
 * Generation of movie recommendation based on current preferences
 * Generation of a customized "movie personality" based on current preferences
 
-## Available Scripts
+## App Walkthrough
 
-In the project directory, you can run:
+The homepage of the networking application is pictured below:
 
-### `npm start`
+![Screenshot 2024-03-17 124939](https://github.com/rrishi-r/Movie-Network-App/assets/122123501/91f11630-aa43-41e5-a341-47e641e84ff1)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### User Registration
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Screenshot 2024-03-18 132555](https://github.com/rrishi-r/Movie-Network-App/assets/122123501/bb523c17-a5ba-4943-bd3b-df9b2fddba10)
 
-### `npm test`
+### `Account Page`
+
+![Screenshot 2024-03-17 121724](https://github.com/rrishi-r/Movie-Network-App/assets/122123501/8baf6caa-05b8-4c13-97dc-6ab5127fb61f)
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
