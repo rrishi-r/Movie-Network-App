@@ -67,7 +67,7 @@ function Selections() {
 	var argument = '/Results?urlValue=';
 	argument = argument.concat(encodeURIComponent(movieURL));
 	historyCommand.push(argument);
-  }, [historyCommand]);
+  }, [historyCommand, omdpValue]);
 
   survey.onComplete.add(alertResults);
 
