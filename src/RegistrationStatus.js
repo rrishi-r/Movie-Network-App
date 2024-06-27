@@ -1,15 +1,11 @@
-import { useLocation, useHistory} from 'react-router-dom';
-import React, {useEffect} from 'react';
+import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import RegistrationForm from "./RegistrationForm";
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 
 function RegistrationStatus(){
-	const history = useHistory();
-	useEffect(() => {
-		const redirectTimeout = setTimeout(() => {
-		  history.push('./');
-		}, 1000); 
-
-		return () => clearTimeout(redirectTimeout);
-	}, [history]); 
 	console.log("registration status function");
 	const location = useLocation();
 	const params = new URLSearchParams(location.search);
@@ -28,7 +24,6 @@ function RegistrationStatus(){
 			</div>
 		);
 	}
-	
 };
 export default RegistrationStatus;
 	

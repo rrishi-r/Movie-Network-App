@@ -1,0 +1,59 @@
+export interface AnimationOptions {
+    cssClass: string;
+    onBeforeRunAnimation?: (element: HTMLElement) => void;
+    onAfterRunAnimation?: (element: HTMLElement) => void;
+}
+export interface IAnimationConsumer<T extends Array<any> = []> {
+    getLeaveOptions(...args: T): AnimationOptions;
+    getEnterOptions(...args: T): AnimationOptions;
+    getAnimatedElement(...args: T): HTMLElement;
+    isAnimationEnabled(): boolean;
+}
+export declare class AnimationUtils {
+    private getMsFromRule;
+    private reflow;
+    private getAnimationsCount;
+    private getAnimationDuration;
+    private cancelQueue;
+    private addCancelCallback;
+    private removeCancelCallback;
+    protected onAnimationEnd(element: HTMLElement, callback: (isCancel?: boolean) => void, options: AnimationOptions): void;
+    protected beforeAnimationRun(element: HTMLElement, options: AnimationOptions | AnimationOptions): void;
+    private getCssClasses;
+    protected runAnimation(element: HTMLElement, options: AnimationOptions, callback: (isCancel?: boolean) => void): void;
+    protected clearHtmlElement(element: HTMLElement, options: AnimationOptions): void;
+    protected onNextRender(callback: () => void, runEarly?: () => boolean, isCancel?: boolean): void;
+    cancel(): void;
+}
+export declare class AnimationPropertyUtils extends AnimationUtils {
+    onEnter(options: IAnimationConsumer): void;
+    onLeave(options: IAnimationConsumer, callback: () => void): void;
+}
+export declare class AnimationGroupUtils<T> extends AnimationUtils {
+    runGroupAnimation(options: IAnimationConsumer<[T]>, addedElements: Array<T>, removedElements: Array<T>, callback?: () => void): void;
+}
+export declare abstract class AnimationProperty<T, S extends Array<any> = []> {
+    protected animationOptions: IAnimationConsumer<S>;
+    protected update: (val: T, isTempUpdate?: boolean) => void;
+    protected getCurrentValue: () => T;
+    constructor(animationOptions: IAnimationConsumer<S>, update: (val: T, isTempUpdate?: boolean) => void, getCurrentValue: () => T);
+    protected animation: AnimationUtils;
+    protected abstract _sync(newValue: T): void;
+    private _debouncedSync;
+    sync(newValue: T): void;
+    cancel(): void;
+}
+export declare class AnimationBoolean extends AnimationProperty<boolean> {
+    protected animation: AnimationPropertyUtils;
+    protected _sync(newValue: boolean): void;
+}
+export declare class AnimationGroup<T> extends AnimationProperty<Array<T>, [T]> {
+    protected animation: AnimationGroupUtils<T>;
+    protected _sync(newValue: Array<T>): void;
+}
+export declare class AnimationTab<T> extends AnimationProperty<Array<T>, [T]> {
+    protected mergeValues?: (newValue: Array<T>, oldValue: Array<T>) => Array<T>;
+    protected animation: AnimationGroupUtils<T>;
+    constructor(animationOptions: IAnimationConsumer<[T]>, update: (val: Array<T>, isTempUpdate?: boolean) => void, getCurrentValue: () => Array<T>, mergeValues?: (newValue: Array<T>, oldValue: Array<T>) => Array<T>);
+    protected _sync(newValue: [T]): void;
+}

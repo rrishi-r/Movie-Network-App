@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+/src/openai.js
+/src/omdp_api.js
+server/node_modules/.cache/
+C:\Users\rishi\MovieApp\movie-app\server\.env
+C:\Users\rishi\MovieApp\movie-app\.env

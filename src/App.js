@@ -1,6 +1,10 @@
+import { useCallback } from 'react';
 
 import 'survey-core/defaultV2.min.css';
-import React from 'react';
+import React, { useState } from 'react';
+import { Model } from 'survey-core';
+import { Survey } from 'survey-react-ui';
+import axios from 'axios';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import Selections from "./Selections";
 import Results from "./Results";
@@ -49,7 +53,7 @@ function App() {
 			/>
 		<Route path="/UpdateUser/:username" component={UpdateUser} />
 		</Switch>
-		<img src={homepageImage} alt="" style={{clipPath: 'inset(60px 0 0 0)', marginLeft: 'auto'}} />
+		<img src={homepageImage} alt="Homepage Image" style={{clipPath: 'inset(60px 0 0 0)', marginLeft: 'auto'}} />
 	  </BrowserRouter>
   </div>
   );
