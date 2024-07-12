@@ -8,6 +8,8 @@ The Movie Networking App includes the following functionality:
 ## App Walkthrough
 
 The homepage of the networking application is pictured below:
+![screenshot](Screenshot 2024-06-26 235949.png)
+
 
 ![Screenshot 2024-03-17 124939](https://github.com/rrishi-r/Movie-Network-App/assets/122123501/91f11630-aa43-41e5-a341-47e641e84ff1)
 
