@@ -5,17 +5,24 @@ The Movie Networking App includes the following functionality:
 * Login to view the latest news based on movie / news preferences
 * Receive weekly email updates on the latest news highlights
 
+
 ## App Walkthrough
 
-The homepage of the networking application is pictured below:
-![screenshot](Screenshot 2024-06-26 235949.png)
+The homepage of the movie network application is pictured below:
 
-
-![Screenshot 2024-03-17 124939](https://github.com/rrishi-r/Movie-Network-App/assets/122123501/91f11630-aa43-41e5-a341-47e641e84ff1)
+![Screenshot 2024-06-26 235949](https://github.com/user-attachments/assets/a9c7ecb5-8406-47ba-b9fc-eebd2f36be69)
 
 ### User Registration
 
-![Screenshot 2024-03-18 132555](https://github.com/rrishi-r/Movie-Network-App/assets/122123501/bb523c17-a5ba-4943-bd3b-df9b2fddba10)
+The user registration page of the movie network application is shown below.
+
+![Screenshot 2024-06-27 000052](https://github.com/user-attachments/assets/9a9782b1-ce6f-4e0c-ac9b-4e63b2ca2475)
+
+### Login
+
+The login page of the movie network application is shown below.
+
+![Screenshot 2024-06-27 000457](https://github.com/user-attachments/assets/7182a6f7-095a-4102-a325-9676786d7d36)
 
 ### Account Page
 
