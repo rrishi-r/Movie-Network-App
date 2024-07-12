@@ -1,11 +1,9 @@
 # Movie Networking App
 
 The Movie Networking App includes the following functionality: 
-* User registration with favorite movie, genre, and actor
-* Option to update current "favorites" preferences
-* Option to search for movies by type (movie, series), year released, and key word
-* Generation of movie recommendation based on current preferences
-* Generation of a customized "movie personality" based on current preferences
+* User registration with favorite movie genres, preferred languages, favorite movie actors, and preferred news
+* Login to view the latest news based on movie / news preferences
+* Receive weekly email updates on the latest news highlights
 
 ## App Walkthrough
 
