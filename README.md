@@ -3,7 +3,7 @@
 The Movie Networking App includes the following functionality: 
 * User registration with favorite movie genres, preferred languages, favorite movie actors, and preferred news
 * Login to view the latest news based on movie / news preferences
-* Receive weekly email updates on the latest news highlights
+* Receive weekly email updates on the latest news highlights in the movie and television world.
 
 This app was developed using MongoDB, Express.js, React.js, Node.js, HTML, CSS, Langchain, and OpenAI’s GPT API.
 
