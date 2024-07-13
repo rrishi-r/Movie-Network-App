@@ -17,31 +17,21 @@ The homepage of the movie network application is pictured below:
 
 The user registration page of the movie network application is shown below.
 
-![Screenshot 2024-06-27 000052](https://github.com/user-attachments/assets/9a9782b1-ce6f-4e0c-ac9b-4e63b2ca2475)
+![Screenshot 2024-07-13 143739](https://github.com/user-attachments/assets/7e870d91-874f-45a5-b13e-22f01fd651be)
 
 ### Login
 
 The login page of the movie network application is shown below.
 
-![Screenshot 2024-06-27 000457](https://github.com/user-attachments/assets/7182a6f7-095a-4102-a325-9676786d7d36)
+![Screenshot 2024-07-13 143807](https://github.com/user-attachments/assets/7ad3d3a4-fc8c-47c9-ac24-d63ceace6db2)
 
-### Account Page
+### News Page
 
-The image below shows the account page, including a welcome message, the user's current movie preferences, as well as movie recommendations and a customized "movie personality" (generated using OpenAI API).
+The images below show examples of news stories that appear on the news page when a user logs in. News stories are not limited to movies alone, and can also include topics related to television in general as shown in the second image.
 
-Options to find a film and update current preferences are also pictured.
-![Screenshot 2024-03-17 121724](https://github.com/rrishi-r/Movie-Network-App/assets/122123501/8baf6caa-05b8-4c13-97dc-6ab5127fb61f)
+![Screenshot 2024-07-13 144235](https://github.com/user-attachments/assets/192d1153-7234-495d-ae11-424d8c87e500)
 
-### Search for movies
-
-The images below show the form to search for movies and the corresponding top results
-
-
-![Screenshot 2024-03-18 133206](https://github.com/rrishi-r/Movie-Network-App/assets/122123501/38db039e-61c6-40d5-bd22-dcf482116bb0)  
-
-
-![Screenshot 2024-03-18 133137](https://github.com/rrishi-r/Movie-Network-App/assets/122123501/81ad72ca-c82f-4977-a725-1d0118a4d6df)
-
+![Screenshot 2024-07-13 144252](https://github.com/user-attachments/assets/8fc549e8-33c5-4e03-a7f8-fd61e22574bd)
 
 # Getting Started with Create React App
 
