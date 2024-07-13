@@ -25,6 +25,12 @@ The login page of the movie network application is shown below.
 
 ![Screenshot 2024-07-13 143807](https://github.com/user-attachments/assets/7ad3d3a4-fc8c-47c9-ac24-d63ceace6db2)
 
+### News Generation
+
+When a user presses the log in button, the app scans the internet for movie / television news based on their preferences, and a loading icon is shown during this process.
+
+![Screenshot 2024-07-13 004038](https://github.com/user-attachments/assets/071d30ea-69aa-4370-9487-ebb131961b76)
+
 ### News Page
 
 The images below show examples of news stories that appear on the news page when a user logs in. News stories are not limited to movies alone, and can also include topics related to television in general as shown in the second image.
