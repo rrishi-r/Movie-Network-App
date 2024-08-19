@@ -64,11 +64,11 @@ def generateNews(url):
         urls = [url]
         loader = UnstructuredURLLoader(urls=urls)
         docs = loader.load()
-        text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
+        text_splitter = CharacterTextSplitter(chunk_size=4000, chunk_overlap=0)
         texts = text_splitter.split_documents(docs)
         embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
         db = Chroma.from_documents(texts, embeddings)
-        retriever = db.as_retriever(search_type="similarity", search_kwargs={"k":2})
+        retriever = db.as_retriever(search_type="similarity", search_kwargs={"k": 2})
         qa = RetrievalQA.from_chain_type(
             llm=OpenAI(openai_api_key=openai_api_key), chain_type="stuff", retriever=retriever, return_source_documents=False)
         query = "You are a news reporter. Create a news report on this article that is between 100 and 200 words. The first sentence should be a headline for the news story. Every sentence should be complete."
@@ -84,11 +84,14 @@ if __name__ == "__main__":
     arg3 = json.loads(sys.argv[3])
     arg4 = json.loads(sys.argv[4])
     urls = results(arg1, arg2, arg3, arg4)
+    #print(urls)
     for i in range(5):
         if(i == len(urls)):
             break
         elif(len(generateNews(urls[i])) > 0):
+            #print(urls[i])
             currentNews.append(generateNews(urls[i]))
+            #print(currentNews[len(currentNews) - 1])
     
     parsedNews = []
     for i in range(len(currentNews)):
