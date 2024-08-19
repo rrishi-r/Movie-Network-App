@@ -14,7 +14,7 @@ app.use(cors({ origin: 'http://localhost:3000' }));
 
 console.log("before email update function");
 
-cron.schedule('51 12 * * *', () => {
+cron.schedule('0 18 * * 5', () => {
 	emailUpdate();
 })
 
